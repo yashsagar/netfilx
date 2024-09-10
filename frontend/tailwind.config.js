@@ -21,6 +21,10 @@ export default {
           dropDown: "#52525e", //rgb(82, 82, 94)
         },
       },
+      backgroundImage: {
+        "info-bg-gradient":
+          "linear-gradient(149deg, #192247 0%, #210e17 99.08%)",
+      },
     },
     screens: {
       xs: "600px", // => @media (min-width: 400px) { ... }

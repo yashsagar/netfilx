@@ -1,19 +1,20 @@
 import { useCallback, useEffect, useState } from "react";
-import { Detailpage } from "../component/index.js";
+import { Detailpage } from "../component";
 
 const Trending = () => {
   const [data, setData] = useState("");
   const [contentType, setContentType] = useState("movie");
   const [block, setBlock] = useState("india");
-  const [detailPage, setDetailPage] = useState({
-    componentState: false,
-    detailData: "",
+  const [detailPageConfig, setDetailPageConfig] = useState({
+    isVisible: false,
+    showsDetails: "",
   });
 
   const fetchData = useCallback(async (type) => {
     const response = await fetch(
       `http://localhost:3000/api/v1/landingPageData/${type}`
     );
+
     const fetchData = await response.json();
     setData(fetchData);
   }, []);
@@ -59,9 +60,9 @@ const Trending = () => {
   };
 
   function handelDetails(item) {
-    setDetailPage({
-      componentState: true,
-      detailData: item,
+    setDetailPageConfig({
+      isVisible: true,
+      showsDetails: item,
     });
   }
 
@@ -141,14 +142,17 @@ const Trending = () => {
             </svg>
           </div>
         </form>
-        {/* trending block */}
-        <div className="grid grid-flow-col auto-cols-[125px] overflow-x-scroll gap-6 trending-wrapper mt-8 px-4 select-none">
+        {/* trending result display */}
+        <div
+          className="grid grid-flow-col auto-cols-[125px] overflow-x-scroll overflow-y-hidden gap-6 trending-wrapper mt-8 px-4 select-none"
+          draggable="false"
+        >
           {filteredData &&
             filteredData.map((item, index) => {
               return (
                 <div
                   key={item.id}
-                  className="cursor-pointer rounded-lg relative"
+                  className="cursor-pointer rounded-lg relative "
                   onClick={() => {
                     handelDetails(item);
                   }}
@@ -169,9 +173,11 @@ const Trending = () => {
               );
             })}
         </div>
-        {/*end of trending block and start of detail page*/}
-        {detailPage.componentState && (
-          <Detailpage detailData={detailPage.detailData} />
+        {/*detail info block*/}
+        {detailPageConfig.isVisible && (
+          <Detailpage
+            configaration={{ detailPageConfig, setDetailPageConfig }}
+          />
         )}
       </div>
     </div>

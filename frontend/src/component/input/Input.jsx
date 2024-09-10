@@ -4,17 +4,12 @@ const Input = ({
   type = "text",
   name = "",
   children,
-  controledComponent = false,
+  controledComponent: { 0: inputValue } = [null, null],
+  controledComponent: { 1: setInputValue } = [null, null],
   wrapperProps = {},
   labelProps = {},
   inputProps = {},
 }) => {
-  let inputValue, setInputValue;
-
-  if (controledComponent) {
-    [inputValue, setInputValue] = controledComponent;
-  }
-
   function handleOnchange(event) {
     setInputValue((prevState) => ({
       ...prevState,
@@ -30,10 +25,13 @@ const Input = ({
         name={name}
         className={style.input}
         placeholder=" "
-        {...(controledComponent
-          ? { value: inputValue[name], onChange: handleOnchange }
-          : {})}
         {...inputProps}
+        {...(inputValue
+          ? {
+              value: inputValue[name],
+              onChange: handleOnchange,
+            }
+          : {})}
       />
       <label className={style.label} {...labelProps} htmlFor={id}>
         {children}
