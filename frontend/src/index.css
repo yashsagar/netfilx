@@ -49,6 +49,18 @@
   z-index: -10;
 }
 
+.hero-bg-singin {
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.84) 5%,
+      transparent,
+      black 95%
+    ),
+    url("/hero-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .main-wrapper {
   width: 88%;
   max-width: 1200px;
@@ -118,6 +130,20 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@media screen and (min-width: 1280px) {
+  .ratingNumber {
+    font-size: 7rem;
+    left: -1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .ratingNumber {
+    font-size: 6rem;
+    left: -1.5rem;
+  }
+}
+
 .topTen {
   position: absolute;
   top: 0;
@@ -133,4 +159,5 @@
 
 .test {
   border: 1px solid rgb(255, 0, 0);
+  /* color: #414141; */
 }

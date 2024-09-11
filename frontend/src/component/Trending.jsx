@@ -71,8 +71,10 @@ const Trending = () => {
   return (
     <div className="bg-black -mt-8">
       <div className=" main-wrapper">
-        <p className="text-lg mb-3">Trending Now</p>
-        <form className=" space-y-2 ">
+        <p className="text-xl mb-3 lg:text-2xl lg:font-bold xl:text-3xl">
+          Trending Now
+        </p>
+        <form className=" space-y-2 lg:grid lg:grid-cols-[150px_150px] lg:space-y-0 gap-2">
           <div className="flex justify-between items-center border-2 border-gray-500 rounded-sm bg-slate-600/20 relative">
             <select
               name="block"
@@ -144,7 +146,7 @@ const Trending = () => {
         </form>
         {/* trending result display */}
         <div
-          className="grid grid-flow-col auto-cols-[125px] overflow-x-scroll overflow-y-hidden gap-6 trending-wrapper mt-8 px-4 select-none"
+          className="grid grid-flow-col auto-cols-[125px] lg:auto-cols-[180px] xl:auto-cols-[220px] overflow-x-scroll overflow-y-hidden gap-6 lg:gap-10 trending-wrapper mt-8 px-4 lg:px-6 select-none"
           draggable="false"
         >
           {filteredData &&

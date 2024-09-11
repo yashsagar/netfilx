@@ -24,7 +24,7 @@ const Detailpage = ({
   return (
     <dialog
       ref={dialogRef}
-      className="w-full h-full max-w-[600px] shadow-md shadow-white/50 outline-none"
+      className="w-full h-full max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px] shadow-md shadow-white/50 outline-none"
     >
       <div
         style={{

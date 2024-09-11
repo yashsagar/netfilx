@@ -1,7 +1,7 @@
 const Navbar = () => {
   return (
     <div className="flex justify-between items-center main-wrapper pt-6 ">
-      <div className="w-24">
+      <div className="w-24 md:w-40">
         {/* <img src="/netflix-logo.png" alt="" /> */}
         <svg
           viewBox="0 0 111 30"

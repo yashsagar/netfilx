@@ -8,14 +8,16 @@ const FaqDropDown = () => {
     <div className=" pt-12 bg-black">
       <div className="main-wrapper">
         <p className="text-xl">Frequently Asked Questions</p>
-        <div className="mt-4 max-w-[800px] space-y-2">
+        <div className="mt-4 space-y-2 mx-auto text-white/80 ">
           <div
             onClick={() => {
               setIsopen((prevState) => ({ 1: !prevState["1"] }));
             }}
           >
             <div className="p-6 bg-[#2d2d2d] hover:bg-[#414141] flex justify-between items-center">
-              <p className="text-xl tracking-wider">What is Netflix?</p>
+              <p className="text-xl tracking-wider xl:text-2xl xl:font-medium">
+                What is Netflix?
+              </p>
               <Plus
                 size={35}
                 strokeWidth={1.5}
@@ -23,7 +25,7 @@ const FaqDropDown = () => {
               />
             </div>
             {isOpen["1"] && (
-              <div className="p-6 bg-[#2d2d2d] text-lg space-y-4 mt-1 tracking-wide">
+              <div className="p-6 bg-[#2d2d2d] text-lg xl:text-xl xl:font-medium space-y-4 mt-1 tracking-wide">
                 <p>
                   Netflix is a streaming service that offers a wide variety of
                   award-winning TV shows, movies, anime, documentaries and more
@@ -44,17 +46,17 @@ const FaqDropDown = () => {
             }}
           >
             <div className="p-6 bg-[#2d2d2d] hover:bg-[#414141] flex justify-between items-center gap-1">
-              <p className="text-xl tracking-wider">
+              <p className="text-xl tracking-wider xl:text-2xl xl:font-medium">
                 How much does Netflix cost?
               </p>
               <Plus
                 size={35}
                 strokeWidth={1.5}
-                className={isOpen["1"] ? "rotate-45" : ""}
+                className={isOpen["2"] ? "rotate-45" : ""}
               />
             </div>
             {isOpen["2"] && (
-              <div className="p-6 bg-[#2d2d2d] text-lg space-y-4 mt-1 tracking-wide">
+              <div className="p-6 bg-[#2d2d2d] text-lg xl:text-xl xl:font-medium space-y-4 mt-1 tracking-wide">
                 <p>
                   Watch Netflix on your smartphone, tablet, Smart TV, laptop, or
                   streaming device, all for one fixed monthly fee. Plans range
@@ -69,15 +71,17 @@ const FaqDropDown = () => {
             }}
           >
             <div className="p-6 bg-[#2d2d2d] hover:bg-[#414141] flex justify-between items-center">
-              <p className="text-xl tracking-wider">Where can I watch?</p>
+              <p className="text-xl tracking-wider xl:text-2xl xl:font-medium">
+                Where can I watch?
+              </p>
               <Plus
                 size={35}
                 strokeWidth={1.5}
-                className={isOpen["1"] ? "rotate-45" : ""}
+                className={isOpen["3"] ? "rotate-45" : ""}
               />
             </div>
             {isOpen["3"] && (
-              <div className="p-6 bg-[#2d2d2d] text-lg space-y-4 mt-1 tracking-wide">
+              <div className="p-6 bg-[#2d2d2d] text-lg xl:text-xl xl:font-medium space-y-4 mt-1 tracking-wide">
                 <p>
                   Watch anywhere, anytime. Sign in with your Netflix account to
                   watch instantly on the web at netflix.com from your personal
@@ -100,15 +104,17 @@ const FaqDropDown = () => {
             }}
           >
             <div className="p-6 bg-[#2d2d2d] hover:bg-[#414141] flex justify-between items-center">
-              <p className="text-xl tracking-wider">How do I cancel?</p>
+              <p className="text-xl tracking-wider xl:text-2xl xl:font-medium">
+                How do I cancel?
+              </p>
               <Plus
                 size={35}
                 strokeWidth={1.5}
-                className={isOpen["1"] ? "rotate-45" : ""}
+                className={isOpen["4"] ? "rotate-45" : ""}
               />
             </div>
             {isOpen["4"] && (
-              <div className="p-6 bg-[#2d2d2d] text-lg space-y-4 mt-1 tracking-wide">
+              <div className="p-6 bg-[#2d2d2d] text-lg xl:text-xl xl:font-medium space-y-4 mt-1 tracking-wide">
                 <p>
                   Netflix is flexible. There are no annoying contracts and no
                   commitments. You can easily cancel your account online in two
@@ -124,17 +130,17 @@ const FaqDropDown = () => {
             }}
           >
             <div className="p-6 bg-[#2d2d2d] hover:bg-[#414141] flex justify-between items-center">
-              <p className="text-xl tracking-wider">
+              <p className="text-xl tracking-wider xl:text-2xl xl:font-medium">
                 What can I watch on Netflix?
               </p>
               <Plus
                 size={35}
                 strokeWidth={1.5}
-                className={isOpen["1"] ? "rotate-45" : ""}
+                className={isOpen["5"] ? "rotate-45" : ""}
               />
             </div>
             {isOpen["5"] && (
-              <div className="p-6 bg-[#2d2d2d] text-lg space-y-4 mt-1 tracking-wide">
+              <div className="p-6 bg-[#2d2d2d] text-lg xl:text-xl xl:font-medium space-y-4 mt-1 tracking-wide">
                 <p>
                   Netflix has an extensive library of feature films,
                   documentaries, TV shows, anime, award-winning Netflix
@@ -150,17 +156,17 @@ const FaqDropDown = () => {
             }}
           >
             <div className="p-6 bg-[#2d2d2d] hover:bg-[#414141] flex justify-between items-center">
-              <p className="text-xl tracking-wider">
+              <p className="text-xl tracking-wider xl:text-2xl xl:font-medium">
                 Is Netflix good for kids?
               </p>
               <Plus
                 size={35}
                 strokeWidth={1.5}
-                className={isOpen["1"] ? "rotate-45" : ""}
+                className={isOpen["5"] ? "rotate-45" : ""}
               />
             </div>
             {isOpen["6"] && (
-              <div className="p-6 bg-[#2d2d2d] text-lg space-y-4 mt-1 tracking-wide">
+              <div className="p-6 bg-[#2d2d2d] text-lg xl:text-xl xl:font-medium space-y-4 mt-1 tracking-wide">
                 <p>
                   The Netflix Kids experience is included in your membership to
                   give parents control while kids enjoy family-friendly TV shows

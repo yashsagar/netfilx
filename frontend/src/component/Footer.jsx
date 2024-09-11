@@ -5,7 +5,7 @@ const Footer = () => {
         <p className="pb-10">
           Questions? Call <span className="underline">000-800-919-1694</span>
         </p>
-        <div className="underline space-y-3">
+        <div className="underline space-y-3 xs:grid xs:grid-cols-2 sm:grid-cols-3 gl:grid-cols-4 2xl:grid-cols-5 pb-10   ">
           <p>FAQ</p>
           <p>Help Centre</p>
           <p>Account</p>

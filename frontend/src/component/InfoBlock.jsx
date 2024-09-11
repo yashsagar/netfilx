@@ -3,7 +3,7 @@ const InfoBlock = () => {
     <div className=" pt-20 bg-black  ">
       <div className="main-wrapper">
         <p className="text-2xl mb-4">More reasons to join</p>
-        <div className="grid auto-rows-[220px] gap-2">
+        <div className="grid auto-rows-[220px] lg:grid-cols-2 xl:grid-cols-4 xl:auto-rows-[340px] gap-2 lg:gap-4">
           <div className="bg-info-bg-gradient px-4 pt-7 pb-2 rounded-lg">
             <div className="relative  h-full w-full">
               <p className="text-2xl">Enjoy on your TV</p>
@@ -11,7 +11,7 @@ const InfoBlock = () => {
                 Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
                 Blu-ray players and more.
               </p>
-              <div className="w-[70px] h-[70px] absolute -right-1 bottom-0">
+              <div className="w-[70px] h-[70px] absolute -right-1 bottom-0 xl:bottom-3 xl:right-3">
                 <svg width="100%" height="100%" viewBox="0 0 72 72" fill="none">
                   <g id="television-core-small">
                     <path
@@ -135,12 +135,13 @@ const InfoBlock = () => {
           </div>
           <div className="bg-info-bg-gradient px-4 pt-7 pb-2 rounded-2xl">
             <div className="relative  h-full w-full">
-              <p className="text-[1.25rem]">Enjoy on your TV</p>
-              <p className="pr-2 text-white/70 pt-2">
-                Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
-                Blu-ray players and more.
+              <p className="text-[1.25rem]">
+                Download your shows to watch offline
               </p>
-              <div className="w-[70px] h-[70px] absolute -right-1 bottom-0">
+              <p className="pr-2 text-white/70 pt-2">
+                Save your favourites easily and always have something to watch.
+              </p>
+              <div className="w-[70px] h-[70px] absolute -right-1 bottom-0 xl:bottom-3 xl:right-3">
                 <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
                   <g id="download-core-small">
                     <path
@@ -288,12 +289,12 @@ const InfoBlock = () => {
           </div>
           <div className="bg-info-bg-gradient px-4 pt-7 pb-2 rounded-lg">
             <div className="relative  h-full w-full">
-              <p className="text-[1.25rem]">Enjoy on your TV</p>
+              <p className="text-[1.25rem]">Watch everywhere</p>
               <p className="pr-2 text-white/70 pt-2">
-                Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
-                Blu-ray players and more.
+                Stream unlimited movies and TV shows on your phone, tablet,
+                laptop and TV.
               </p>
-              <div className="w-[70px] h-[70px] absolute -right-1 bottom-0">
+              <div className="w-[70px] h-[70px] absolute -right-1 bottom-0 xl:bottom-3 xl:right-3">
                 <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
                   <g id="telescope-core-small">
                     <path
@@ -469,12 +470,12 @@ const InfoBlock = () => {
           </div>
           <div className="bg-info-bg-gradient px-4 pt-7 pb-2 rounded-lg">
             <div className="relative  h-full w-full">
-              <p className="text-[1.25rem]">Enjoy on your TV</p>
+              <p className="text-[1.25rem]">Create profiles for kids</p>
               <p className="pr-2 text-white/70 pt-2">
-                Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
-                Blu-ray players and more.
+                Send kids on adventures with their favourite characters in a
+                space made just for them — free with your membership.
               </p>
-              <div className="w-[70px] h-[70px] absolute -right-1 bottom-0">
+              <div className="w-[70px] h-[70px] absolute -right-1 bottom-0 xl:bottom-3 xl:right-3">
                 <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
                   <g id="profiles-core-small">
                     <path
