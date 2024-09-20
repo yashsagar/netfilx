@@ -12,7 +12,7 @@ const Trending = () => {
 
   const fetchData = useCallback(async (type) => {
     const response = await fetch(
-      `http://localhost:3000/api/v1/landingPageData/${type}`
+      `${import.meta.env.VITE_BACKEND}v1/landingPageData/${type}`
     );
 
     const fetchData = await response.json();
@@ -71,7 +71,7 @@ const Trending = () => {
   return (
     <div className="bg-black -mt-8">
       <div className=" main-wrapper">
-        <p className="text-xl mb-3 lg:text-2xl lg:font-bold xl:text-3xl">
+        <p className="text-xl mb-8 lg:text-2xl lg:font-bold xl:text-3xl relative z-10">
           Trending Now
         </p>
         <form className=" space-y-2 lg:grid lg:grid-cols-[150px_150px] lg:space-y-0 gap-2">

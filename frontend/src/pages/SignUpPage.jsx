@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Input } from "../component";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useAuthStore } from "../../store/authUser";
 
 const SignUpPage = () => {
   const emailfromLandingPage = useLocation().state?.email;
@@ -9,9 +10,12 @@ const SignUpPage = () => {
     password: "",
     name: "",
   });
-
   const [isValid, setValid] = useState(false);
-  const navigate = useNavigate();
+
+  const { signup } = useAuthStore((state) => ({
+    signup: state.signup,
+  }));
+
   const emailValidate =
     /^[a-zA-Z0-9][a-zA-Z0-9.\-_]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/.test(
       inputValue[0].email
@@ -31,6 +35,7 @@ const SignUpPage = () => {
     inputValue[0].password.length < 2 ? false : !passwordValidation;
 
   function handelSbmit() {
+    const { name: username, email, password } = inputValue[0];
     if (!nameValidation) {
       setValid(true);
       return;
@@ -46,13 +51,13 @@ const SignUpPage = () => {
       return;
     }
 
-    navigate("/mainpage", { replace: true });
+    signup({ username, email, password });
   }
 
   return (
     <>
-      <div className="hero-bg-singin min-h-[80vh] 2xl:min-h-[90vh]">
-        <div className="bg-black min-h-[80vh] 2xl:min-h-[90vh] xs:bg-transparent">
+      <div className="hero-bg-singin min-h-[80vh] ">
+        <div className="bg-black min-h-[80vh] xs:bg-transparent">
           <div className=" main-wrapper relative z-10 ">
             <Link to="/">
               <div className="w-24 md:w-40 pt-6">

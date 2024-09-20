@@ -8,8 +8,8 @@ import {
 const HomePage = () => {
   return (
     <>
-      <div className="min-h-screen -mt-24 lg:-mt-[80px] 2xl:-mt-[150px]">
-        <div className="pt-[55%] xs:pt-[40%] sm:pt-[30%] md:pt-[25%]   2xl:pt-[30%] text-center main-wrapper">
+      <div className="hero-bg-singin -mt-20  -mb-5   ">
+        <div className="pt-[55%] xs:pt-[40%] sm:pt-[40%] md:pt-[40%] lg:pt-[25%] 2xl:pt-[20%] text-center main-wrapper relative z-10">
           <h2 className="font-sans text-[2.2rem] mx-auto xs:max-w-[550px] sm:max-w-[650px] xl:sm:max-w-[850px] sm:text-[3rem] font-bold leading-[125%] xl:text-[3.5rem]">
             Unlimited movies, TV shows and more
           </h2>

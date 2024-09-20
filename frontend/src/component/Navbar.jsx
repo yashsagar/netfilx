@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center main-wrapper pt-6 ">
+    <div className="flex justify-between items-center main-wrapper pt-6 relative z-20 ">
       <Link to="/">
         <div className="w-24 md:w-40">
           <svg
