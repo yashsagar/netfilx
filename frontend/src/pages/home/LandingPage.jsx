@@ -3,7 +3,7 @@ import {
   GenerateEmailInput,
   InfoBlock,
   FaqDropDown,
-} from "../component";
+} from "../../component";
 
 const HomePage = () => {
   return (

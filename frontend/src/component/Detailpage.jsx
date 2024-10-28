@@ -44,6 +44,7 @@ const Detailpage = ({
         />
         <div className="bg-gradient-to-t from-black from-10%  w-full h-full"></div>
         <div className=" absolute left-0 bottom-8 text-white px-4">
+          <h2 className="text-2xl">{detailPageConfig.showsDetails.title}</h2>
           <div className="flex gap-2">
             {genre.map((list) => (
               <p key={list} className="px-3 py-1 bg-zinc-600 rounded-md my-2">

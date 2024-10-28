@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Input } from "../component";
 import { Link, useLocation } from "react-router-dom";
-import { useAuthStore } from "../../store/authUser";
+import { useAuthStore } from "../store/authUser";
 
 const SignUpPage = () => {
   const emailfromLandingPage = useLocation().state?.email;
@@ -14,6 +14,7 @@ const SignUpPage = () => {
 
   const { signup } = useAuthStore((state) => ({
     signup: state.signup,
+    isSigningUp: state.isSigningUp,
   }));
 
   const emailValidate =
@@ -188,7 +189,7 @@ const SignUpPage = () => {
             <p className="text-white/70 text-lg  lg:text-xl my-5">
               Already a member?{" "}
               <Link to={"/signin"}>
-                <span className="text-white cursor-pointer">Sign In.</span>
+                <span className=" cursor-pointer text-blue-500">Sign In.</span>
               </Link>
             </p>
             <p className="text-white/50 pb-28 text-sm xs:text-md">

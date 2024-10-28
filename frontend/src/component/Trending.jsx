@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Detailpage } from "../component";
+import ENV_VAR from "../config/envVars.js";
 
 const Trending = () => {
   const [data, setData] = useState("");
@@ -12,7 +13,7 @@ const Trending = () => {
 
   const fetchData = useCallback(async (type) => {
     const response = await fetch(
-      `${import.meta.env.VITE_BACKEND}v1/landingPageData/${type}`
+      `${ENV_VAR.BACKEND}/v1/landingPageData/${type}`
     );
 
     const fetchData = await response.json();

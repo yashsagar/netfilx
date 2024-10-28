@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Input } from "../component";
-import { useLocation, Link, useNavigate } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+import { useAuthStore } from "../store/authUser";
 
 const SignInPage = () => {
   const emailfromLandingPage = useLocation().state?.email;
@@ -11,7 +12,9 @@ const SignInPage = () => {
 
   const [isValid, setValid] = useState(false);
 
-  const navigate = useNavigate();
+  const { login } = useAuthStore((state) => ({
+    login: state.login,
+  }));
 
   const emailValidate =
     /^[a-zA-Z0-9][a-zA-Z0-9.\-_]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/.test(
@@ -23,7 +26,7 @@ const SignInPage = () => {
       inputValue[0].password
     );
 
-  function handelSubmit() {
+  async function handelSubmit() {
     if (!emailValidate) {
       setValid(true);
       return;
@@ -32,8 +35,7 @@ const SignInPage = () => {
       setValid(true);
       return;
     }
-
-    navigate("/mainpage", { replace: true });
+    login(inputValue[0]);
   }
 
   return (
@@ -124,6 +126,12 @@ const SignInPage = () => {
               <p className="py-4 text-center text-lg sm:text-xl text-white/90">
                 Forgot password?
               </p>
+              <p className="text-slate-600">
+                test emailID:{" "}
+                <span className="text-white"> test1@gmail.com</span> <br />
+                test password:
+                <span className="text-white"> Test@123</span>
+              </p>
             </form>
             <p className="text-white/70 text-lg sm:text-xl mb-7 mt-2">
               New to Netflix?{" "}
@@ -133,7 +141,7 @@ const SignInPage = () => {
                   email: emailfromLandingPage ? emailfromLandingPage : "",
                 }}
               >
-                <span className="text-white cursor-pointer">Sign up.</span>
+                <span className="text-blue-500 cursor-pointer">Sign up.</span>
               </Link>
             </p>
             <p className="text-white/50 pb-28 text-sm xs:text-md">
