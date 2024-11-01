@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
+import { useAuthStore } from "../store/authUser.js";
 
 const Navbar = () => {
+  const { navBtnStatus } = useAuthStore((store) => ({
+    navBtnStatus: store.navBtnStatus,
+  }));
+
   return (
-    <div className="flex justify-between items-center main-wrapper pt-6 relative z-20 ">
+    <div
+      className={`flex justify-between items-center main-wrapper-absolute pt-4 z-20 ${
+        navBtnStatus === "none" && "hidden"
+      } `}
+    >
       <Link to="/">
         <div className="w-24 md:w-40">
           <svg
@@ -24,14 +33,16 @@ const Navbar = () => {
         </div>
       </Link>
       <div>
-        <Link to="/signin">
-          <button
-            className="bg-accent hover:bg-accent-hover active:bg-accent-avtive px-4 py-1.5 mb-1 rounded-[4px] font-light text-sm xl:font-semibold xl:tracking-wide xl:text-lg
+        {navBtnStatus && (
+          <Link to="/signin">
+            <button
+              className="bg-accent hover:bg-accent-hover active:bg-accent-avtive px-4 py-1.5 mb-1 rounded-[4px] font-light text-sm xl:font-semibold xl:tracking-wide xl:text-lg
         "
-          >
-            Sign In
-          </button>
-        </Link>
+            >
+              Sign In
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import { AppLayout } from "./layout";
 
 const SignInPage = React.lazy(() => import("./pages/SignInPage.jsx"));
 const SignUpPage = React.lazy(() => import("./pages/SignUpPage.jsx"));
+// const MainPage = React.lazy(() => import("./pages/SignUpPage.jsx"));
 const AuthChechScreen = React.lazy(() =>
   import("./pages/home/AuthChechScreen.jsx")
 );
@@ -17,7 +18,7 @@ const useRouter = () => {
   const { user } = useAuthStore((state) => ({ user: state.user }));
 
   return createRoutesFromElements(
-    <Route>
+    <>
       <Route
         path="/"
         element={
@@ -28,32 +29,33 @@ const useRouter = () => {
       >
         <Route index element={<AuthChechScreen />} />
         {/* <Route path="/mainpage" element={<MainPage />} /> */}
+
+        <Route
+          path="/signin"
+          element={
+            user ? (
+              <Navigate to={"/"} />
+            ) : (
+              <React.Suspense fallback={<div>Loading Routes...</div>}>
+                <SignInPage />
+              </React.Suspense>
+            )
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            user ? (
+              <Navigate to={"/"} />
+            ) : (
+              <React.Suspense fallback={<div>Loading Routes...</div>}>
+                <SignUpPage />
+              </React.Suspense>
+            )
+          }
+        />
       </Route>
-      <Route
-        path="/signin"
-        element={
-          user ? (
-            <Navigate to={"/"} />
-          ) : (
-            <React.Suspense fallback={<div>Loading Routes...</div>}>
-              <SignInPage />
-            </React.Suspense>
-          )
-        }
-      />
-      <Route
-        path="/signup"
-        element={
-          user ? (
-            <Navigate to={"/"} />
-          ) : (
-            <React.Suspense fallback={<div>Loading Routes...</div>}>
-              <SignUpPage />
-            </React.Suspense>
-          )
-        }
-      />
-    </Route>
+    </>
   );
 };
 

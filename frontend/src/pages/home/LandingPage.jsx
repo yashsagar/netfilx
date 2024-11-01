@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   Trending,
   GenerateEmailInput,
@@ -5,10 +6,26 @@ import {
   FaqDropDown,
 } from "../../component";
 
+import { useAuthStore } from "../../store/authUser.js";
+
 const HomePage = () => {
+  const { navBtnUpdate, footerupdate } = useAuthStore((store) => ({
+    navBtnUpdate: store.navBtnUpdate,
+    footerupdate: store.footerupdate,
+  }));
+
+  useEffect(() => {
+    navBtnUpdate(true);
+    footerupdate(true);
+    return () => {
+      navBtnUpdate(false);
+      footerupdate(false);
+    };
+  }, [navBtnUpdate, footerupdate]);
+
   return (
     <>
-      <div className="hero-bg-singin -mt-20  -mb-5   ">
+      <div className="hero-bg-singin -mb-5  ">
         <div className="pt-[55%] xs:pt-[40%] sm:pt-[40%] md:pt-[40%] lg:pt-[25%] 2xl:pt-[20%] text-center main-wrapper relative z-10">
           <h2 className="font-sans text-[2.2rem] mx-auto xs:max-w-[550px] sm:max-w-[650px] xl:sm:max-w-[850px] sm:text-[3rem] font-bold leading-[125%] xl:text-[3.5rem]">
             Unlimited movies, TV shows and more

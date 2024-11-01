@@ -54,6 +54,16 @@
   margin-inline: auto;
 }
 
+.main-wrapper-absolute {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 88%;
+  max-width: 1200px;
+  z-index: 10;
+}
+
 .curve-wrapper {
   position: relative;
   overflow-x: hidden;
